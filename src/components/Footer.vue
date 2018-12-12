@@ -1,6 +1,32 @@
 <template>
   <div class="foot">
-    <b-row>
+    <b-row style="margin-bottom:20px">
+      <b-col cols="12" md="4" >
+        <div style="width:100%;text-align:left">
+          <h6 class="CursorPointer" href="#" @click="toAboutsale" style="cursor:hand;">联系销售部</h6>
+          <p style="margin-top:10px;font-size:14px !important">©2018 Ztnet (SmartHox Ltd) 版权所有</p>
+        </div>
+      </b-col>
+      <b-col cols="12" md="4" style="width:100%;text-align:left">
+        <h6 class="CursorPointer" href="#" @click="toAboutztnet" style="cursor:hand">关于ZTNET</h6>
+        <p style="margin-top:10px;font-size:14px !important">沪ICP备 16036901号</p>
+      </b-col>
+      <b-col cols="12" md="4" style="text-align:center">
+        <img style="width: 90px" src="../../static/img/BT_weixin.png"/>
+      </b-col>
+    </b-row>
+
+    <div class="LineBlock"></div>
+    <div>
+      <b-row>
+        <b-col sm="12" md="4" xl="2">
+          <div style="width:100%;height:100px;line-height:100px;">
+             <img class="CursorPointer" style="width: 100px; height: 47px;" src="../../static/img/ZNKZLogoWhite.png">
+          </div>
+        </b-col>
+      </b-row>
+    </div>
+    <!-- <b-row>
       <b-col cols="12" md="3">
         <h5>关于我们</h5>
         <p>公司简介</p>
@@ -24,7 +50,7 @@
       <b-col>
         <p>Copyright © 2005-2018 Ztnet （Smart Hox Ltd） 版权所有 . 沪ICP备 16036901号</p>
       </b-col>
-    </b-row>
+    </b-row> -->
   </div>
 </template>
 <script>
@@ -44,6 +70,12 @@ export default{
   components: {
   },
   methods: {
+    toAboutsale () {
+      this.$router.push({name: 'Aboutsale'})
+    },
+    toAboutztnet () {
+      this.$router.push({name: 'Aboutztnet'})
+    }
   }
 }
 </script>

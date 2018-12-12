@@ -1,39 +1,29 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import vuexAlong from 'vuex-along'
 
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
+  // app_URL: 'http://192.168.10.137:8081/hoxJK/',
+  // app_URL: 'http://192.168.10.194:8081/hoxJK/',
+  app_URL: 'http://www.smart-hox.com:8081/hoxJK/',
   curMenuIdx: 0,
-  menuList: [
-    {
-      fmenu: '物联网场景应用',
-      icon: '../../static/img/Icon/SmartHox_ApplicationScene_icon2.png',
-      smenu: ['智能家居', '智能酒店', '智能环保', '智能工业', '智能校园']
-    },
-    {
-      fmenu: '产品与服务',
-      icon: '../../static/img/Icon/SmartHox_ApplicationScene_icon4.png',
-      smenu: []
-    },
-    {
-      fmenu: '适玩资讯',
-      icon: '../../static/img/Icon/SmartHox_Products_icon1.png',
-      smenu: []
-    },
-    {
-      fmenu: '关于我们',
-      icon: '../../static/img/Icon/SmartHox_Products_icon3.png',
-      smenu: []
-    }
-  ]
+  menuList: [],
+  secondMenuItem: []
 }
 // actions
 const actions = {
   changeCurMenu ({commit, state}, ID) {
     commit('setCurMenu', ID)
+  },
+  changemenuList ({commit, state}, menuList) {
+    commit('setmenuList', menuList)
+  },
+  changeSecondMenuItem ({commit, state}, item) {
+    commit('SecondMenuItem', item)
   }
 }
 
@@ -41,6 +31,12 @@ const actions = {
 const mutations = {
   setCurMenu (state, Idx) {
     state.curMenuIdx = Idx
+  },
+  setmenuList (state, menuList) {
+    state.menuList = menuList
+  },
+  SecondMenuItem (state, item) {
+    state.secondMenuItem = item
   }
 }
 
@@ -50,5 +46,6 @@ export default new Vuex.Store({
   },
   actions,
   mutations,
-  strict: debug
+  strict: debug,
+  plugins: [vuexAlong]
 })
