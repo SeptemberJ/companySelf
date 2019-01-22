@@ -4,12 +4,13 @@ import vuexAlong from 'vuex-along'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production'
+// const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
   // app_URL: 'http://192.168.10.137:8081/hoxJK/',
   // app_URL: 'http://192.168.10.194:8081/hoxJK/',
-  app_URL: 'http://www.smart-hox.com:8081/hoxJK/',
+  app_URL: 'http://shkingdee-soft.com/hoxJK/',
+  imgPre: 'http://shkingdee-soft.com/upFiles/',
   curMenuIdx: 0,
   menuList: [],
   secondMenuItem: []
@@ -46,6 +47,6 @@ export default new Vuex.Store({
   },
   actions,
   mutations,
-  strict: debug,
+  // strict: debug,
   plugins: [vuexAlong]
 })

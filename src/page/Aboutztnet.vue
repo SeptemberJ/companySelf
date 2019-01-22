@@ -2,7 +2,7 @@
   <div class="Aboutztnet">
     <div class="LineBlock"></div>
     <div>
-      <img :src="'http://www.smart-hox.com:8081/upFiles/' + aboutZ.image" style="backgroundSize: cover">
+      <img v-if="aboutZ.image" :src="imgPre + aboutZ.image" style="backgroundSize: cover">
     </div>
     <!-- <div  class="mudleImg" style="position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + aboutZ.image + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
       <div style="position:absolute;bottom:0;padding-left:40px;text-align:left;color:white;margin-top:80px;width:100%">
@@ -16,150 +16,22 @@
     </div> -->
     <div style="width:90%;min-height:10px;padding-top:30px;margin:auto;text-align:left !important">
       <div class="AboutztnetMainContentBox">
-        <div v-html="thishtml"></div>
+        <div v-html="wholehtml"></div>
       </div>
     </div>
-    <!-- <div style="padding-left:20px;padding-right:20px;margin-top:30px ;margin-botton:200px">
-      <div class="introduce">
-        <h2>smart hox  快快非官方的闪光点快</h2>
-        <div class="blue" style="text-align:left">
-            <b-col cols="12" sm="12" md="6" lg="4" style="background-color:#267997">
-              <p class="smallSize" style="font-size:16px;line-height:50px;padding-bottom:0px;text-align:left">地址kkkkkkkk</p>
-            </b-col>
-        </div>
-        <div class="detail" style="margin-top:30px">卡噶几开发规划进口卡噶几开发规划进口红酒客户黄金卡很干净看哈进口红酒很快就啊卡噶几开发规划进口红酒客户黄金卡很干净看哈进口红酒很快就啊卡噶几开发规划进口红酒客户黄金卡很干净看哈进口红酒很快就啊红酒客户黄金卡很干净看哈进口红酒很快就啊哈国际快递华工科技加空格回到家客户</div>
-        <div class="callan" style="margin-top:30px">
-          <b-row style="padding-top:10px;padding-bottom:10px">
-            <b-col cols="12" sm="12" md="6" lg="4">
-              <div class="smallSize" style="font-size:16px;padding-bottom:0px">地kkk</div>
-              <div class="smallSize" style="font-size:14px;">地址kkkkhahhahahhahahahahdd华师大返回的数据kkkk</div>
-            </b-col>
-            <b-col cols="12" sm="12" md="6" lg="4">
-              <div class="smallSize" style="font-size:16px;">kkk</div>
-              <div class="smallSize" style="font-size:14px;">地址kkkkkkkk</div>
-            </b-col>
-            <b-col cols="12" sm="12" md="6" lg="4">
-              <div class="smallSize" style="font-size:16px;">kkkkk</div>
-              <div class="smallSize" style="font-size:14px;">地址kkkkkkkk</div>
-            </b-col>
-          </b-row>
-        </div>
+    <!-- team -->
+    <section class="TeamBlock">
+      <div class="personIntroduction">
+        <p>{{teamList[curPersonIdx].introduce}}</p>
       </div>
-    </div> -->
-    <!-- <div style="background-color:pink;margin-top:20px;width:100%;min-height:100px;padding-left:20px;padding-right:20px">发展状况
-       <div style="padding-top:10px;padding-bottom:10px;width:100%;display:flex;justify-content:space-between;margin-bottom:-32px">
-        <div style="min-width:10px">
-          <div class="smallSize"  style="text-align:left">2019</div>
-          <div class="smallSize"  style="text-align:left">hahhha家居服基督kkkj经济法第几集教</div>
-          <div style="width:10px">
-            <div class="smallSize" >|</div>
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-          </div>
-        </div>
-        <div style="min-width:10px">
-          <div class="smallSize" style="text-align:left">2019</div>
-          <div class="smallSize"  style="text-align:left">hahhha家居服基督教</div>
-          <div style="width:10px">
-            <div class="smallSize" >|</div>
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-          </div>
-        </div>
-        <div style="min-width:10px">
-          <div class="smallSize"  style="text-align:left">2019</div>
-          <div class="smallSize" style="text-align:left" >hahhha家居服基督教</div>
-          <div style="width:10px">
-            <div class="smallSize" >|</div>
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-          </div>
-        </div>
-      </div>
-      <hr style="border : 1px dashed red;"/>
-      <div style="padding-top:10px;padding-bottom:10px;width:100%;display:flex;justify-content:space-between;padding-left:100px;margin-top:-32px">
-        <div style="min-width:10px">
-          <div style="width:10px;">
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-            <div class="smallSize" >|</div>
-          </div>
-          <div class="smallSize"  style="text-align:right ;margin-left:-100px">2019</div>
-          <div class="smallSize" style="text-align:right;margin-left:-100px" >hahhha家居服基督教</div>
-        </div>
-        <div style="min-width:10px">
-          <div style="width:10px;">
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-            <div class="smallSize" >|</div>
-          </div>
-          <div class="smallSize"  style="text-align:right;margin-left:-100px">2019</div>
-          <div class="smallSize" style="text-align:right;margin-left:-100px" >hahhha家居服基督教</div>
-        </div>
-        <div style="min-width:10px">
-          <div style="width:10px;">
-            <div class="smallSize" style="width:10px;height:10px;border-radius:5px;background-color:red"></div>
-            <div class="smallSize" >|</div>
-          </div>
-          <div class="smallSize"  style="text-align:right;margin-left:-100px">2019</div>
-          <div class="smallSize" style="text-align:right;margin-left:-100px" >hahhha家居服基督教</div>
-        </div>
-      </div>
-    </div> -->
-    <!-- <div class="piclist" style="margin-top:30px;padding-left:20px;padding-right:20px">
-      <b-row>
-        <b-col cols="12" sm="6" md="6" lg="3">
-          <div style="width:100%;height:100px;background-color:grey">1111</div>
-          <p class="smallSize" style="font-size:14px">11111111</p>
-        </b-col>
-        <b-col cols="12" sm="6" md="6" lg="3">
-          <div style="width:100%;height:100px;background-color:grey">1111</div>
-          <p class="smallSize" style="font-size:14px">2222222</p>
-        </b-col>
-        <b-col cols="12" sm="6" md="6" lg="3">
-          <div style="width:100%;height:100px;background-color:grey">1111</div>
-          <p class="smallSize" style="font-size:14px">3333333</p>
-        </b-col>
-        <b-col cols="12" sm="6" md="6" lg="3">
-          <div style="width:100%;height:100px;background-color:grey">1111</div>
-          <p class="smallSize" style="font-size:14px">444444444</p>
-        </b-col>
-      </b-row>
-    </div> -->
-    <!-- <div style="margin-top:30px;min-top:20px;background-color:pink;padding-left:20px;padding-right:20px">
       <div>
-        <div>
-          <b-row style="padding-top:10px;padding-bottom:10px">
-            <b-col cols="12" sm="12" md="1" lg="2">
-            </b-col>
-            <b-col cols="12" sm="12" md="10" lg="8">
-              <div><span style="float:left;font-size:40px">“</span><span><h3 style="display: inline-block">资深团队</h3></span></div>
-            </b-col>
-            <b-col cols="12" sm="12" md="1" lg="2">
-            </b-col>
-          </b-row>
-        </div>
-      </div>
-      <h4>hhhhhhhhhhhh</h4>
-      <div>
-        <b-row style="padding-top:10px;padding-bottom:10px">
-          <b-col cols="12" sm="12" md="1" lg="2">
-          </b-col>
-          <b-col cols="12" sm="12" md="10" lg="8">
-            <div style="text-align:left;font-size:14px;color:#333">健康绿色伏建国离开房间观看了发动机赶快来时代峰峻看来就健康了健身房了客观金石可镂根据反馈的两个健康绿色交罚款</div>
-            <span style="float:right;font-size:40px">”</span>
-          </b-col>
-          <b-col cols="12" sm="12" md="1" lg="2">
-          </b-col>
+        <b-row class="PictureBlock">
+          <b-col cols="3" style="padding: 0;text-align:left;"><img class="arrowIcon" src="../../static/img/circle-left.png" @click="PrePerson"></b-col>
+          <b-col cols="6" style="padding: 0"><img class="pseronImg" :src="'http://www.smart-hox.com:8081/upFiles/' + teamList[curPersonIdx].head_pic"></b-col>
+          <b-col cols="3" style="padding: 0;text-align:right;"><img class="arrowIcon" src="../../static/img/circle-right.png" @click="NextPerson"></b-col>
         </b-row>
       </div>
-      <div style="width:100%;margin-top:30px">
-        <b-row style="padding-top:10px;padding-bottom:10px">
-          <b-col cols="12" sm="12" md="1" lg="2">
-          </b-col>
-          <b-col cols="12" sm="12" md="10" lg="8">
-            <div style="width:150px;height:200px;background-color:white;margin:auto"></div>
-          </b-col>
-          <b-col cols="12" sm="12" md="1" lg="2">
-          </b-col>
-        </b-row>
-      </div>
-    </div> -->
+    </section>
   </div>
 </template>
 
@@ -170,6 +42,9 @@ export default {
   name: 'Aboutztnet',
   data () {
     return {
+      wholehtml: '',
+      teamList: [],
+      curPersonIdx: 0,
       thishtml: '',
       customerlist: '',
       joinuslist: '',
@@ -197,37 +72,49 @@ export default {
   },
   computed: {
     ...mapState({
-      app_URL: state => state.app_URL
+      app_URL: state => state.app_URL,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {
-    console.log(111)
     this.getList()
-    console.log(222)
   },
   methods: {
+    PrePerson () {
+      if (this.curPersonIdx > 0) {
+        this.curPersonIdx--
+      }
+    },
+    NextPerson () {
+      if (this.curPersonIdx < this.teamList.length - 1) {
+        this.curPersonIdx++
+      }
+    },
     getList (ID) {
       axios.get(this.app_URL + 'aboutZTNET'
       ).then((res) => {
         if (res.data.code === 1) {
-          console.log(res.data)
-          this.aboutZ = res.data.aboutZTNET[0]
-          console.log(res.data.aboutZTNET[0].image)
-          this.thishtml = res.data.aboutZTNET[0].fcontent
-          this.customerlist = res.data.customerlist
-          this.joinuslist = res.data.joinuslist
-          this.companylist = res.data.companylist[0]
-          this.teamlist = res.data.teamlist
-          this.ztnetlist = res.data.ztnetlist
-          this.newslist = res.data.newslist
-          this.activitylist = res.data.activitylist
-          console.log(333)
-          this.changetime1()
-          console.log(444)
-          this.changetime2()
-          console.log(555)
-          this.photolist = res.data.photos[0]
-          this.newlist2 = res.data.newlist2[0]
+          this.wholehtml = res.data.aboutZTNET[0].fcontent
+          this.teamList = res.data.teamlist
+          console.log(res.data.teamlist)
+          // console.log(res.data)
+          // this.aboutZ = res.data.aboutZTNET[0]
+          // console.log(res.data.aboutZTNET[0].image)
+          // this.thishtml = res.data.aboutZTNET[0].fcontent
+          // this.customerlist = res.data.customerlist
+          // this.joinuslist = res.data.joinuslist
+          // this.companylist = res.data.companylist[0]
+          // this.teamlist = res.data.teamlist
+          // this.ztnetlist = res.data.ztnetlist
+          // this.newslist = res.data.newslist
+          // this.activitylist = res.data.activitylist
+          // console.log(333)
+          // this.changetime1()
+          // console.log(444)
+          // this.changetime2()
+          // console.log(555)
+          // this.photolist = res.data.photos[0]
+          // this.newlist2 = res.data.newlist2[0]
         }
       })
     },
@@ -297,9 +184,37 @@ export default {
 }
 </script>
 <style scoped>
+.PictureBlock{
+  height: 240px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+.arrowIcon{
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  cursor: pointer;
+}
+.personIntroduction{
+  margin-bottom: 50px;
+}
+.pseronImg{
+  height: 200px;
+  margin: 20px auto;
+}
+.card-img-top{
+  height: 250px;
+}
+.Aboutztnet{
+  padding: 0 40px;
+}
+.TeamBlock{
+  width:90%;
+  margin: 20px auto 40px auto;
+}
 .Img{
   width: 100%;
-  margin: 10px auto;
+  margin: 10px auto !important;
 }
 .piclist{
   width: 100%;

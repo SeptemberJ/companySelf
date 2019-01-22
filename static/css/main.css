@@ -1,12 +1,15 @@
-/*body{
+body{
 	min-width: 320px !important;
-}*/
+}
 .CursorPointer{
 	cursor: pointer;
 }
 .CursorPointer:hover{
 	color: #1296db;
 	font-weight: bold;
+}
+.Padding_10{
+	padding: 10px;
 }
 .PaddingL_10{
 	padding-left: 10px;
@@ -17,6 +20,9 @@
 .PaddingR_20{
 	padding-right: 20px;
 }
+.Padding_20{
+	padding: 20px;
+}
 .LineBlock{
 	width: 200%;
   height: 5px;
@@ -24,7 +30,7 @@
   background: linear-gradient(90deg,#aadb1e 0,#006a91);
 }
 .TextCenter{
-	text-align: center;
+	text-align: center !important;
 }
 .TextLeft{
 	text-align: left;
@@ -37,6 +43,12 @@
 }
 .MarginT_20{
 	margin-top: 20px;
+}
+.MarginB_40{
+	margin-bottom: 40px;
+}
+.MarginT_40{
+	margin-top: 40px;
 }
 .MarginB_20{
 	margin-bottom: 20px;

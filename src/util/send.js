@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL_PREFIX = 'http://www.smart-hox.com:8081/hoxJK'
+const URL_PREFIX = 'http://shkingdee-soft.com/hoxJK'
 
 let registerId = localStorage['registerId']
 let account = localStorage['account']

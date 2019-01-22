@@ -14,7 +14,7 @@ import '../static/css/style.css'
 
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
-
+Vue.config.devtools = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

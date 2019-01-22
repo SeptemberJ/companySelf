@@ -38,20 +38,19 @@ export default {
   },
   computed: {
     ...mapState({
-      app_URL: state => state.app_URL
+      app_URL: state => state.app_URL,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {
     this.getonelist()
-    // this.getshiwan()
   },
   methods: {
     ...mapActions([
       'changemenuList'
     ]),
     async getonelist () {
-      // let t = await this.getSecondMenu()
-      axios.get(this.$store.state.app_URL + 'ZwzOneList'
+      axios.get(this.app_URL + 'ZwzOneList'
       ).then((_res) => {
         if (_res.data.code === 1) {
           let fmenu = _res.data.ZwzOnelist
@@ -67,10 +66,19 @@ export default {
         axios.get(this.app_URL + 'ZwzsecondList?one_id=' + fmenu.id
         ).then((res) => {
           if (res.data.code === 1) {
+            // ---分行
+            let SmenuList = res.data.Zwzsecondlist
+            let conut = Math.ceil(SmenuList.length / 10)
+            let menuArray = []
+            for (let i = 0; i < conut; i++) {
+              let itemArray = SmenuList.splice(0, 10)
+              menuArray[i] = itemArray
+            }
+            // ---分行
             let obj = {
               'fmenu': fmenu.one_name,
-              'icon': 'http://www.smart-hox.com:8081/upFiles/' + fmenu.one_icon,
-              'smenu': res.data.Zwzsecondlist
+              'icon': this.imgPre + fmenu.one_icon,
+              'smenu': menuArray // res.data.Zwzsecondlist
             }
             resolve(obj)
           }

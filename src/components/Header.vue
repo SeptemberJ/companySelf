@@ -6,18 +6,18 @@
         <i v-if="HeaderMenu && !ifShowRightBlock" class="fa fa-close CursorPointer" @click="toggleSider" style="font-size: 30px;margin-top: 10px;"></i>
       </b-col>
       <b-col cols="8" class="TextRight RightPC">
-        <div class="SmallTit HoverTrigger">
+        <!-- <div class="SmallTit HoverTrigger">
           <span HoverTrigger>HoxCloud 登入<i class="fa fa-chevron-right" style="margin-top: 10px;margin-left:5px;"></i></span>
           <div class="HoverTargetBox">
             <span v-for="(web, idx) in zwzLinklist" :key="idx" @click="changeweb(web)">{{web.fname}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="SmallTit" style="display: inline-block;font-weight: 200;margin-left:20px;"><span><i class="fa fa-phone" style="margin-top: 10px;margin-right:5px;"></i>{{tel}}</span></div>
       </b-col>
-      <b-col cols="8" class="TextRight RightMobile" @click="toggleRightBlock">
+      <!-- <b-col cols="8" class="TextRight RightMobile" @click="toggleRightBlock">
         <i v-if="!HeaderMenu && !ifShowRightBlock" class="fa fa-ellipsis-v CursorPointer" style="margin-top: 10px;margin-right:5px;font-size: 30px;"></i>
         <i v-if="!HeaderMenu && ifShowRightBlock" class="fa fa-close CursorPointer" style="margin-top: 10px;margin-right:5px;font-size: 30px;"></i>
-      </b-col>
+      </b-col> -->
     </b-row>
     <!-- mobile -->
     <div v-if="HeaderMenu" class="headerMenu" style="background: #333 !important;">
@@ -33,16 +33,28 @@
             </b-row>
           </b-nav-item>
           <div v-if="menuIndex == idx && ifShowsecondMenu" class="secondMenu" style="margin-top:15px" >
-            <b-nav-item v-for="(sMenu, sIdx) in menuList[idx].smenu" :key="sIdx" class="secondname">
-              <b-row style="padding-left: 30px;">
-                <b-col cols="12" class="TextLeft"><span @click="chooseSecondMenu(sMenu)" style="height:25px;line-height:25px;display:block;" class="secondname">{{sMenu.second_name}}</span></b-col>
-              </b-row>
-            </b-nav-item>
+            <div v-for="(sMenuArray, sIdxA) in menuList[idx].smenu" :key="sIdxA">
+              <b-nav-item v-for="(sMenu, sIdx) in sMenuArray" :key="sIdx" class="secondname">
+                <b-row style="padding-left: 30px;">
+                  <b-col cols="12" class="TextLeft"><span @click="chooseSecondMenu(sMenu)" style="height:25px;line-height:25px;display:block;" class="secondname">{{sMenu.second_name}}</span></b-col>
+                </b-row>
+              </b-nav-item>
+            </div>
           </div>
+        </div>
+        <div>
+          <b-nav-item style="height:50px;overflow:hidden;">
+            <b-row>
+              <b-col cols="4" class="TextLeft"><span>客服电话</span></b-col>
+              <b-col cols="8" class="TextRight">
+                <a href="sms:18717702993"><span><i class="fa fa-phone" style="margin-top: 10px;margin-right:5px;"></i>{{tel}}</span></a>
+              </b-col>
+            </b-row>
+          </b-nav-item>
         </div>
       </b-nav>
     </div>
-    <div v-if="ifShowRightBlock" class="headerMenu" style="background: #333 !important;">
+    <!-- <div v-if="ifShowRightBlock" class="headerMenu" style="background: #333 !important;">
       <b-nav vertical class="w-100">
           <b-nav-item style="height:50px;line-height:50px;" v-for="(web, idx) in zwzLinklist" :key="idx">
             <b-row @click="changeweb(web)">
@@ -61,7 +73,7 @@
             </b-row>
           </b-nav-item>
       </b-nav>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -72,7 +84,7 @@ export default {
   name: 'Header',
   data () {
     return {
-      tel: '400 820 4288',
+      tel: '18717702993',
       HeaderMenu: false,
       ifShowsecondMenu: false,
       ifShowRightBlock: false,
@@ -130,36 +142,50 @@ export default {
       }
     },
     changeMenu (idx) {
-      if (idx === 0) {
-        this.showOverLay = true
-        this.menuIndex = idx
-      }
       this.changeCurMenu(idx)
-      switch (idx) {
-        case -1:
-          this.$router.push({name: 'Internet'})
-          break
-        case 0:
-          this.$router.push({name: 'Internet'})
-          this.HeaderMenu = false
-          break
-        case 1:
-          this.$router.push({name: 'Product'})
-          this.HeaderMenu = false
-          break
-        case 2:
-          this.$router.push({name: 'Article'})
-          this.HeaderMenu = false
-          break
-        case 3:
-          this.$router.push({name: 'Aboutztnet'})
-          this.HeaderMenu = false
-          break
-        default:
-          this.$router.push({name: 'Internet'})
-          this.HeaderMenu = false
+      if (idx === 0) {
+        this.$router.push({name: 'Internet'})
+      } else {
+        let Smenu = this.menuList[idx].smenu
+        if (Smenu.length > 0) {
+          this.menuIndex = idx
+        } else {
+          this.$router.push({name: 'ERP'})
+        }
       }
+      this.HeaderMenu = false
     },
+    // changeMenu2 (idx) {
+    //   if (idx === 0) {
+    //     this.showOverLay = true
+    //     this.menuIndex = idx
+    //   }
+    //   this.changeCurMenu(idx)
+    //   switch (idx) {
+    //     case -1:
+    //       this.$router.push({name: 'Internet'})
+    //       break
+    //     case 0:
+    //       this.$router.push({name: 'Internet'})
+    //       this.HeaderMenu = false
+    //       break
+    //     case 1:
+    //       this.$router.push({name: 'Product'})
+    //       this.HeaderMenu = false
+    //       break
+    //     case 2:
+    //       this.$router.push({name: 'Article'})
+    //       this.HeaderMenu = false
+    //       break
+    //     case 3:
+    //       this.$router.push({name: 'Aboutztnet'})
+    //       this.HeaderMenu = false
+    //       break
+    //     default:
+    //       this.$router.push({name: 'Internet'})
+    //       this.HeaderMenu = false
+    //   }
+    // },
     changeweb (web) {
       var address = web.faddress
       window.location.href = address

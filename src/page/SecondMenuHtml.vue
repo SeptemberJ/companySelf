@@ -2,7 +2,7 @@
   <div class="SecondMenuHtml" style="width:100%">
     <div class="LineBlock"></div>
     <div class="bgBlock">
-      <img :src="'http://www.smart-hox.com:8081/upFiles/' + secondMenuItem.image" style="backgroundSize: contain">
+      <img v-if="secondMenuItem.image" :src="imgPre + secondMenuItem.image" style="backgroundSize: contain">
       <!-- <div  class="TopImg" style="position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + secondMenuItem.image + ')', backgroundPosition:'center center', backgroundRepeat:'no-repeat',backgroundSize:'contain'}"> -->
      <!-- <div  class="TopImg" style="position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + secondMenuItem.image + ')', backgroundPosition:'center center', backgroundRepeat:'no-repeat',backgroundSize:'cover'}"> -->
       <!-- <div style="position:absolute;padding-left:40px;text-align:left;color:#fff;margin-top:80px;width:100%">
@@ -25,7 +25,8 @@ export default {
   },
   computed: {
     ...mapState({
-      secondMenuItem: state => state.secondMenuItem
+      secondMenuItem: state => state.secondMenuItem,
+      imgPre: state => state.imgPre
     })
   },
   created () {

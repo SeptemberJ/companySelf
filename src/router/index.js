@@ -6,6 +6,7 @@ import Article from '@/page/Article'
 import AboutUs from '@/page/AboutUs'
 import Aboutsale from '@/page/Aboutsale'
 import Aboutztnet from '@/page/Aboutztnet'
+import ERP from '@/page/ERP'
 import SecondMenuHtml from '@/page/SecondMenuHtml'
 
 Vue.use(Router)
@@ -36,6 +37,11 @@ const router = new Router({
       path: '/Aboutztnet',
       name: 'Aboutztnet',
       component: Aboutztnet
+    },
+    {
+      path: '/ERP',
+      name: 'ERP',
+      component: ERP
     },
     {
       path: '/SecondMenu/:id',

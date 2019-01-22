@@ -4,7 +4,7 @@
     <div  v-if="!showDetail" class="listItem CursorPointer" style="text-align:left;position: relative;" v-for="(item,Idx) in playList" :key="Idx" @click="GoDetail(item)">
       <b-row>
         <b-col cols="4" sm="4" md="4" lg="3" style="overflow: hidden">
-          <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + item.play_pic">
+          <img class="mudleImg" :src="imgPre + item.play_pic">
         </b-col>
         <b-col cols="8" sm="8" md="8" lg="9" style="position:relative;">
           <h6>{{item.play_title}}</h6>
@@ -55,7 +55,8 @@ export default {
   },
   computed: {
     ...mapState({
-      app_URL: state => state.app_URL
+      app_URL: state => state.app_URL,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {

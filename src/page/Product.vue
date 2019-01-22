@@ -19,7 +19,7 @@
                       <div v-if="CurCarousel == Idx" class="owl-item active" style="width: 100%;height: 100%;" v-for="(Carousel,Idx) in CarouselList" :key="Idx">
                         <div class="heroCarouselTabs1 heroCarouselTabs">
                           <div class="item" style="position:relative;">
-                            <b-jumbotron class="CarouselBox" header="" lead="" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + Carousel.carousel_big_pic + ')', backgroundPosition:'center center', backgroundRepeat:'no-repeat',backgroundSize:'cover'}">
+                            <b-jumbotron class="CarouselBox" header="" lead="" :style="{backgroundImage: 'url('+ imgPre + Carousel.carousel_big_pic + ')', backgroundPosition:'center center', backgroundRepeat:'no-repeat',backgroundSize:'cover'}">
                               <h2>{{Carousel.carousel_title}}</h2>
                               <div v-html="Carousel.carousel_content"></div>
                               <!-- <b-btn variant="primary" href="#">More Info</b-btn> -->
@@ -39,8 +39,7 @@
                     <div class="owl-pagination">
                       <div v-for="(Carousel,Idx) in CarouselList" :key="Idx" :class="{ 'active': CurCarousel == Idx,'owl-page downpage CursorPointer':true}"  @click="ChangeCurCarousel(Idx)">
                         <div style="width:100%;text-align:center">
-                          <!-- <span><img style="width:40px;height:40px;display:inline" :src="'http://www.smart-hox.com:8081/upFiles/' + Carousel.carousel_icon"></span> -->
-                          <span><img style="width:40px;height:40px;display:inline" :src="'http://www.smart-hox.com:8081/upFiles/' + Carousel.carousel_icon"><div style="height: 40px;padding:0 20px;text-align:center;display:inline">{{Carousel.carousel_name}}</div></span>
+                          <span><img style="width:40px;height:40px;display:inline" :src="imgPre + Carousel.carousel_icon"><div style="height: 40px;padding:0 20px;text-align:center;display:inline">{{Carousel.carousel_name}}</div></span>
                         </div>
                         <!-- <span style="width:100%;"><div style="width:100%;height: 40px;text-align:center;">{{Carousel.carousel_name}}</div></span> -->
                       </div>
@@ -64,22 +63,22 @@
     <p class="MarginB_20">{{ZwzOnelist.centre_content}}</p>
     <b-row>
       <b-col cols="12" sm="6" md="6" lg="3">
-        <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + ZwzOnelist.centre_icon1_pic">
+        <img class="mudleImg" :src="imgPre + ZwzOnelist.centre_icon1_pic">
         <p class="SmallTit" style="font-size:16px">{{ZwzOnelist.centre_icon1_name}}</p>
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon1_introduce}}</p>
       </b-col>
       <b-col cols="12" sm="6" md="6" lg="3">
-        <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + ZwzOnelist.centre_icon2_pic">
+        <img class="mudleImg" :src="imgPre + ZwzOnelist.centre_icon2_pic">
         <p class="SmallTit" style="font-size:16px">{{ZwzOnelist.centre_icon2_name}}</p>
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon2_introduce}}</p>
       </b-col>
       <b-col cols="12" sm="6" md="6" lg="3">
-        <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + ZwzOnelist.centre_icon3_pic">
+        <img class="mudleImg" :src="imgPre + ZwzOnelist.centre_icon3_pic">
         <p class="SmallTit" style="font-size:16px">{{ZwzOnelist.centre_icon3_name}}</p>
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon3_introduce}}</p>
       </b-col>
       <b-col cols="12" sm="6" md="6" lg="3">
-        <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + ZwzOnelist.centre_icon4_pic">
+        <img class="mudleImg" :src="imgPre + ZwzOnelist.centre_icon4_pic">
         <p class="SmallTit" style="font-size:16px">{{ZwzOnelist.centre_icon4_name}}</p>
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon4_introduce}}</p>
       </b-col>
@@ -105,11 +104,12 @@ export default {
   computed: {
     ...mapState({
       app_URL: state => state.app_URL,
-      menuList: state => state.menuList
+      menuList: state => state.menuList,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {
-    axios.get(this.$store.state.app_URL + 'ZwzOneList'
+    axios.get(this.app_URL + 'ZwzOneList'
     ).then((_res) => {
       if (_res.data.code === 1) {
         this.getCarouselList(_res.data.ZwzOnelist[1].id)

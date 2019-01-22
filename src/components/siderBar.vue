@@ -14,6 +14,28 @@
   <div class="overLay" v-if="showOverLay">
     <img class="CursorPointer" src="../../static/img/close.png" @click="hideOverLay">
     <b-row>
+      <b-col xl="12">
+        <b-list-group>
+          <b-list-group-item>
+            <h4 @click="toMenuIndex" class="CursorPointer">{{menuList[menuIndex].fmenu}}</h4>
+          </b-list-group-item>
+          <b-container fluid>
+            <b-row>
+                <b-col v-for="(sMenuArray, sIdxA) in menuList[menuIndex].smenu" :key="sIdxA">
+                  <b-list-group-item class="CursorPointer" v-for="(sMenu, sIdx) in sMenuArray" :key="sIdx">
+                    <span @click="chooseSecondMenu(sMenu)" style="font-size:14px">{{sMenu.second_name}}</span>
+                  </b-list-group-item>
+                </b-col>
+            </b-row>
+          </b-container>
+        </b-list-group>
+      </b-col>
+      <b-col></b-col>
+    </b-row>
+  </div>
+  <!-- <div class="overLay" v-if="showOverLay">
+    <img class="CursorPointer" src="../../static/img/close.png" @click="hideOverLay">
+    <b-row>
       <b-col>
         <b-list-group>
           <b-list-group-item>
@@ -26,7 +48,7 @@
       </b-col>
       <b-col></b-col>
     </b-row>
-  </div>
+  </div> -->
 </div>
 </template>
 
@@ -38,29 +60,6 @@ export default {
     return {
       showOverLay: false,
       menuIndex: 0
-      // curMenuIdx: 0,
-      // menuList: [
-      //   {
-      //     fmenu: '物联网场景应用',
-      //     icon: '../../static/img/Icon/SmartHox_ApplicationScene_icon2.png',
-      //     smenu: ['智能家居', '智能酒店', '智能环保', '智能工业', '智能校园']
-      //   },
-      //   {
-      //     fmenu: '产品与服务',
-      //     icon: '../../static/img/Icon/SmartHox_ApplicationScene_icon4.png',
-      //     smenu: []
-      //   },
-      //   {
-      //     fmenu: '适玩资讯',
-      //     icon: '../../static/img/Icon/SmartHox_Products_icon1.png',
-      //     smenu: []
-      //   },
-      //   {
-      //     fmenu: '关于我们',
-      //     icon: '../../static/img/Icon/SmartHox_Products_icon3.png',
-      //     smenu: []
-      //   }
-      // ]
     }
   },
   computed: {
@@ -79,6 +78,21 @@ export default {
       'changeSecondMenuItem'
     ]),
     changeMenu (idx) {
+      this.changeCurMenu(idx)
+      if (idx === -1) {
+        this.$router.push({name: 'Internet'})
+      } else {
+        let Smenu = this.menuList[idx].smenu
+        if (Smenu.length > 0) {
+          this.showOverLay = true
+          this.menuIndex = idx
+        } else {
+          this.$router.push({name: 'ERP'})
+          this.showOverLay = false
+        }
+      }
+    },
+    changeMenu2 (idx) {
       if (idx === 0 || idx === 1) {
         this.showOverLay = true
         this.menuIndex = idx
@@ -128,7 +142,6 @@ export default {
       // this.showOverLay = false
       this.changeSecondMenuItem(sMenu)
       this.$router.push({name: 'SecondMenuHtml', params: {id: sMenu}})
-      console.log(sMenu)
       this.showOverLay = false
       // this.ifShowsecondMenu = false
       // this.HeaderMenu = false
@@ -189,6 +202,7 @@ export default {
   z-index: 999999;
   background: #000;
   color: #fff;
+  overflow-y: scroll;
   /*background: rgb(41, 36, 33, .9);*/
 }
 .overLay img{

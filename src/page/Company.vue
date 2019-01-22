@@ -2,7 +2,7 @@
   <div class="Company">
     <div>
       <b-col>
-        <div  class="mudleImg" style="position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + aboutZ.first_pic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
+        <div  class="mudleImg" style="position:relative;" :style="{backgroundImage: 'url('+ imgPre + aboutZ.first_pic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
           <div style="position:absolute;padding-left:40px;text-align:left;color:white;margin-top:80px;width:100%">
             <b-row>
               <b-col cols="12" sm="12" md="12" lg="10">
@@ -14,7 +14,7 @@
             </b-row>
           </div>
         </div>
-        <!-- <img class="mudleImg" :src="'http://www.smart-hox.com:8081/upFiles/' + "> -->
+        <!-- <img class="mudleImg" :src="imgPre + "> -->
       </b-col>
     </div>
     <div style="margin-top:50px;margin-left:20px">
@@ -81,13 +81,13 @@
             </b-row>
             <b-row>
               <b-col cols="12" sm="12" md="6" lg="4" v-for="(teampic,Idx) in ztnetlist" :key="Idx">
-                <div style="width:100%;height:370px;position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + teampic.fpic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
+                <div style="width:100%;height:370px;position:relative;" :style="{backgroundImage: 'url(' + imgPre + teampic.fpic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
                   <div class="ablow" v-if="listIndex != Idx && show">
                     <div style="display:flex;flex-direction:column;justify-content:center;min-height:100%;">
                       <b-row>
                         <b-col cols="2" sm="2" md="2" lg="2">
                           <div style="width:100%;height:90px;">
-                            <img :src="'http://www.smart-hox.com:8081/upFiles/' + teampic.ficon" style="width:30px;height:30px;margin-left:10px">
+                            <img :src="imgPre + teampic.ficon" style="width:30px;height:30px;margin-left:10px">
                           </div>
                         </b-col>
                         <b-col cols="8" sm="7" md="7" lg="7" style="padding-right:0px">
@@ -112,7 +112,7 @@
                       <b-row>
                         <b-col cols="2" sm="2" md="2" lg="2">
                           <div style="width:100%;height:90px;">
-                            <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + teampic.ficon" style="width:30px;height:30px;margin-left:10px">
+                            <img class="fpic" :src="imgPre + teampic.ficon" style="width:30px;height:30px;margin-left:10px">
                           </div>
                         </b-col>
                         <b-col cols="8" sm="7" md="7" lg="7" style="padding-right:0px">
@@ -145,32 +145,32 @@
             <b-row style="margin-top:30px">
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo1" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo1" style="width:100%;height:100%">
               </div>
             </b-col>
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo2" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo2" style="width:100%;height:100%">
               </div>
             </b-col>
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo3" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo3" style="width:100%;height:100%">
               </div>
             </b-col>
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo4" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo4" style="width:100%;height:100%">
               </div>
             </b-col>
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo5" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo5" style="width:100%;height:100%">
               </div>
             </b-col>
             <b-col cols="6" sm="6" md="3" lg="2">
               <div style="width:100%;height:90px">
-                <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + photolist.photo6" style="width:100%;height:100%">
+                <img class="fpic" :src="imgPre + photolist.photo6" style="width:100%;height:100%">
               </div>
             </b-col>
           </b-row>
@@ -190,14 +190,14 @@
               </b-col>
               <b-col cols="12" sm="12" md="12" lg="3">
                 <div class="pic">
-                  <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + newlist2.image2" style="width:100%;height:100%">
+                  <img class="fpic" :src="imgPre + newlist2.image2" style="width:100%;height:100%">
                 </div>
               </b-col>
             </b-row>
             <b-row v-for="(teampic,Idx) in teamlist" :key="Idx" style="margin-top:20px">
               <b-col cols="12" sm="12" md="12" lg="2">
                 <div style="width:100%;height:100%;">
-                  <img class="fpic" style="max-width:130px;max-height:200px;min-height:180px" :src="'http://www.smart-hox.com:8081/upFiles/' + teampic.head_pic">
+                  <img class="fpic" style="max-width:130px;max-height:200px;min-height:180px" :src="imgPre + teampic.head_pic">
                 </div>
               </b-col>
               <b-col cols="12" sm="12" md="12" lg="7">
@@ -231,7 +231,7 @@
             <b-row style="margin-top:30px">
               <b-col cols="6" sm="6" md="3" lg="2" v-for="(cuspic,Idx) in customerlist" :key="Idx">
                 <div style="width:100%;height:90px;">
-                  <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + cuspic.fpic">
+                  <img class="fpic" :src="imgPre + cuspic.fpic">
                 </div>
               </b-col>
               <!-- <b-col cols="6" sm="6" md="3" lg="2">
@@ -257,7 +257,7 @@
             <b-row style="margin-top:30px">
               <b-col cols="12" sm="12" md="6" lg="6" v-for="(joinpic,Idx) in joinuslist" :key="Idx">
                 <div style="width:100%;height:370px;">
-                  <div style="width:100%;height:370px;position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + joinpic.join_pic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
+                  <div style="width:100%;height:370px;position:relative;" :style="{backgroundImage: 'url(' + imgPre + joinpic.join_pic + ')',backgroundRepeat:'no-repeat', backgroundPosition:'center center',backgroundSize:'cover'}">
                     <!-- <div class="ablow">
                       <div style="display:flex;flex-direction:column;justify-content:center;min-height:100%">
                         <p style="font-size:16px;margin-bottom:0px;">{{joinpic.join_title}}<p>
@@ -275,7 +275,7 @@
                         <b-row>
                           <b-col cols="2" sm="2" md="2" lg="2">
                             <div style="width:100%;height:90px;">
-                              <img :src="'http://www.smart-hox.com:8081/upFiles/' + joinpic.join_icon" style="width:30px;height:30px;margin-left:10px">
+                              <img :src="imgPre + joinpic.join_icon" style="width:30px;height:30px;margin-left:10px">
                             </div>
                           </b-col>
                           <b-col cols="8" sm="8" md="8" lg="8">
@@ -297,7 +297,7 @@
                         <b-row>
                           <b-col cols="2" sm="2" md="2" lg="2">
                             <div style="width:100%;height:90px;">
-                              <img class="fpic" :src="'http://www.smart-hox.com:8081/upFiles/' + joinpic.join_icon" style="width:30px;height:30px;margin-left:10px">
+                              <img class="fpic" :src="imgPre + joinpic.join_icon" style="width:30px;height:30px;margin-left:10px">
                             </div>
                           </b-col>
                           <b-col cols="8" sm="8" md="8" lg="8">
@@ -348,7 +348,7 @@
                   <b-col cols="12" sm="12" md="12" lg="12" style="margin-top:30px;width:100%" v-for="(newspic,Idx) in newslist" :key="Idx" >
                     <div class="mewslist" v-if="newsIndex != Idx && shown">
                       <div style="float:left;margin-left:30px;margin-right:20px;margin-top:40px">
-                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="'http://www.smart-hox.com:8081/upFiles/' + newspic.news_icon">
+                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="imgPre + newspic.news_icon">
                       </div>
                       <div style="float:left;margin-top:20px;min-width:100px;height:80px;overflow:hidden">
                         <p>{{newspic.createtime}}</p>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="mewslist1" v-if="newsIndex == Idx && show4">
                       <div style="float:left;margin-left:30px;margin-right:20px;margin-top:40px">
-                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="'http://www.smart-hox.com:8081/upFiles/' + newspic.news_icon">
+                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="imgPre + newspic.news_icon">
                       </div>
                       <div style="float:left;margin-top:20px;min-width:100px;height:80px;">
                         <p>{{newspic.createtime}}</p>
@@ -394,7 +394,7 @@
                    <b-col cols="12" sm="12" md="12" lg="12" style="margin-top:30px" v-for="(actpic,Idx) in activitylist" :key="Idx">
                     <div class="mewslist" v-if="actIndex != Idx && show6">
                       <div style="float:left;margin-left:30px;margin-right:20px;margin-top:40px">
-                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px" :src="'http://www.smart-hox.com:8081/upFiles/' + actpic.activity_icon">
+                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px" :src="imgPre + actpic.activity_icon">
                       </div>
                       <div style="float:left;margin-top:20px;min-width:100px;height:80px;overflow:hidden">
                         <p style="width:100%">{{actpic.createtime}}</p>
@@ -407,7 +407,7 @@
                     </div>
                     <div class="mewslist1" v-if="actIndex == Idx && show5">
                       <div style="float:left;margin-left:30px;margin-right:20px;margin-top:40px">
-                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="'http://www.smart-hox.com:8081/upFiles/' + actpic.activity_icon">
+                        <img class="fpic" style="width:40px;height:40px;margin-top:-10px"  :src="imgPre + actpic.activity_icon">
                       </div>
                       <div style="float:left;margin-top:20px;min-width:100px;height:80px;">
                         <p>{{actpic.createtime}}</p>
@@ -494,7 +494,8 @@ export default {
   },
   computed: {
     ...mapState({
-      app_URL: state => state.app_URL
+      app_URL: state => state.app_URL,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {

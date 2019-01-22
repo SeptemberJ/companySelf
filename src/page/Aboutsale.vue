@@ -2,7 +2,7 @@
   <div class="Aboutsale" style="text-align:center !important">
     <div class="LineBlock"></div>
     <div>
-      <img :src="'http://www.smart-hox.com:8081/upFiles/' + image" style="backgroundSize: contain">
+      <img :src="imgPre + image" style="backgroundSize: contain">
     </div>
     <!-- <div>
       <div  class="TopImg" style="position:relative;" :style="{backgroundImage: 'url(http://www.smart-hox.com:8081/upFiles/' + image + ')', backgroundPosition:'center center', backgroundRepeat:'no-repeat',backgroundSize:'cover'}">
@@ -43,7 +43,8 @@ export default {
   },
   computed: {
     ...mapState({
-      app_URL: state => state.app_URL
+      app_URL: state => state.app_URL,
+      imgPre: state => state.imgPre
     })
   },
   created: function () {
