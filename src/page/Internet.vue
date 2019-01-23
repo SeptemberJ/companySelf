@@ -58,12 +58,12 @@
   </div>
   <div class="LineBlock"></div>
   <!--  -->
-  <div style="text-align: left;padding: 40px 40px;">
-    <h3 class="MarginB_40"><b>平台架构</b></h3>
+<!--   <div style="text-align: left;padding: 40px 40px;">
+    <h3 class="MarginB_40 TextCenter"><b>平台架构</b></h3>
     <img class="TextCenter" src="http://www.inodes.cn/images/product/cloud/device-cloud-sys.png">
   </div>
   <div style="text-align: left;padding: 40px 40px;">
-    <h4 class="MarginB_40"><b>接入优势</b></h4>
+    <h4 class="MarginB_40 TextCenter"><b>接入优势</b></h4>
     <b-row>
       <b-col cols="12" sm="6" md="6" v-for="(strength, idx) in strengthList" :key="idx" class="MarginB_20" style="border-left: 2px solid #1296db">
         <p class="SmallTit" style="font-size:16px"><i :class="strength.icon" style="margin-right: 10px;"></i>{{strength.tit}}</p>
@@ -72,7 +72,7 @@
     </b-row>
   </div>
   <div style="text-align: left;padding: 40px 40px;">
-    <h3 class="MarginB_40"><b>接入服务</b></h3>
+    <h3 class="MarginB_40 TextCenter"><b>接入服务</b></h3>
     <b-row>
       <b-col cols="12" sm="6" md="6" class="MarginB_20" style="border-left: 2px solid #1296db">
         <p class="SmallTit" style="font-size:16px">标准化产品接入</p>
@@ -87,11 +87,11 @@
     </b-row>
   </div>
   <div style="text-align: left;padding: 40px 40px;">
-    <h3 class="MarginB_40"><b>开发接入流程</b></h3>
+    <h3 class="MarginB_40 TextCenter"><b>开发接入流程</b></h3>
     <img class="TextCenter" src="http://www.inodes.cn/images/product/cloud/apply-step.png">
   </div>
   <div style="text-align: left;padding: 40px 40px;">
-    <h3 class="MarginB_40"><b>应用场景</b></h3>
+    <h3 class="MarginB_40 TextCenter"><b>应用场景</b></h3>
     <b-row>
       <b-col class="MarginB_20" cols="12" sm="4" md="4" v-for="(Case, idx) in caseList" :key="idx">
         <div class="caseWrap">
@@ -102,8 +102,8 @@
         </div>
       </b-col>
     </b-row>
-  </div>
-  <!-- <div style="text-align: left;padding: 40px 40px;">
+  </div> -->
+  <div style="text-align: left;padding: 40px 40px;">
     <h4 class="MarginB_20">{{ZwzOnelist.centre_name}}</h4>
     <p class="MarginB_20">{{ZwzOnelist.centre_content}}</p>
     <b-row>
@@ -128,7 +128,7 @@
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon4_introduce}}</p>
       </b-col>
     </b-row>
-  </div> -->
+  </div>
 </div>
 </template>
 <script>

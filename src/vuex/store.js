@@ -7,10 +7,10 @@ Vue.use(Vuex)
 // const debug = process.env.NODE_ENV !== 'production'
 
 const state = {
-  // app_URL: 'http://192.168.10.137:8081/hoxJK/',
-  // app_URL: 'http://192.168.10.194:8081/hoxJK/',
-  app_URL: 'http://shkingdee-soft.com/hoxJK/',
-  imgPre: 'http://shkingdee-soft.com/upFiles/',
+  app_URL: 'http://www.smart-hox.com:8081/hoxJK/',
+  imgPre: 'http://www.smart-hox.com:8081/upFiles/',
+  // app_URL: 'http://shkingdee-soft.com/hoxJK/',
+  // imgPre: 'http://shkingdee-soft.com/upFiles/',
   curMenuIdx: 0,
   menuList: [],
   secondMenuItem: []

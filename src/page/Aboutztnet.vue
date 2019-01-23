@@ -20,7 +20,7 @@
       </div>
     </div>
     <!-- team -->
-    <section class="TeamBlock">
+    <section class="TeamBlock" v-if="teamList.length > 0">
       <div class="personIntroduction">
         <p>{{teamList[curPersonIdx].introduce}}</p>
       </div>
