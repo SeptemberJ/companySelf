@@ -1,6 +1,6 @@
 <template>
   <div class="ERP">
-    <section class="toastBlock" v-if="showToast">申请成功，我们将尽快与您联系！</section>
+    <section class="toastBlock" v-if="showToast">{{toastText}}</section>
     <section>
       <div class="topBlock" style="background: url(http://www.ik3cloud.com/images/index/bannerSemNew.png) center/cover no-repeat">
         <!-- <img src="http://www.ik3cloud.com/images/index/bannerSemNew.png" style="backgroundSize: cover"> -->
@@ -63,6 +63,7 @@ export default {
     return {
       showToast: false,
       modalShow: false,
+      toastText: '',
       name: '',
       phone: '',
       productionList: [
@@ -100,9 +101,18 @@ export default {
       this.modalShow = true
     },
     insert (ID) {
-      axios.post(this.app_URL + 'coustomerinsert', {fname: this.name, fmobile: this.phone}
+      if (this.name === '' || this.phone === '') {
+        this.showToast = true
+        this.toastText = '请输入姓名和手机号！'
+        setTimeout(() => {
+          this.showToast = false
+        }, 1500)
+        return false
+      }
+      axios.post(this.app_URL + 'coustomerinsert', {fname: this.name, fmobile: this.phone, production: '云ERP'}
       ).then((res) => {
         if (res.data.code === 0) {
+          this.toastText = '申请成功，我们将尽快与您联系！'
           this.modalShow = false
           this.showToast = true
           this.name = ''
@@ -156,17 +166,17 @@ export default {
   border: 1px solid #e0a800;
 }
 .experienceBt{
-  display: none;
+  display: none !important;
   margin: 40px auto 0 auto;
   width: 100px;
-  border-radius: 50px;
+  border-radius: 50px !important;
   font-size: 16px;
 }
 .productionItem:hover .experienceBt{
-  display: block;
+  display: block !important;
 }
 .productionItem:hover .productionList{
-  display: none;
+  display: none !important;
 }
 /*.experienceBox H5:before{
   content:"—";

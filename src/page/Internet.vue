@@ -58,7 +58,7 @@
   </div>
   <div class="LineBlock"></div>
   <!--  -->
-<!--   <div style="text-align: left;padding: 40px 40px;">
+  <div style="text-align: left;padding: 40px 40px;">
     <h3 class="MarginB_40 TextCenter"><b>平台架构</b></h3>
     <img class="TextCenter" src="http://www.inodes.cn/images/product/cloud/device-cloud-sys.png">
   </div>
@@ -102,8 +102,8 @@
         </div>
       </b-col>
     </b-row>
-  </div> -->
-  <div style="text-align: left;padding: 40px 40px;">
+  </div>
+  <!-- <div style="text-align: left;padding: 40px 40px;">
     <h4 class="MarginB_20">{{ZwzOnelist.centre_name}}</h4>
     <p class="MarginB_20">{{ZwzOnelist.centre_content}}</p>
     <b-row>
@@ -128,7 +128,7 @@
         <p class="smallSize" style="font-size:14px">{{ZwzOnelist.centre_icon4_introduce}}</p>
       </b-col>
     </b-row>
-  </div>
+  </div> -->
 </div>
 </template>
 <script>

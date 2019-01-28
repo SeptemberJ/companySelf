@@ -6,18 +6,18 @@
         <i v-if="HeaderMenu && !ifShowRightBlock" class="fa fa-close CursorPointer" @click="toggleSider" style="font-size: 30px;margin-top: 10px;"></i>
       </b-col>
       <b-col cols="8" class="TextRight RightPC">
-        <div class="SmallTit HoverTrigger">
+        <!-- <div class="SmallTit HoverTrigger">
           <span HoverTrigger>HoxCloud 登入<i class="fa fa-chevron-right" style="margin-top: 10px;margin-left:5px;"></i></span>
           <div class="HoverTargetBox">
             <span v-for="(web, idx) in zwzLinklist" :key="idx" @click="changeweb(web)">{{web.fname}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="SmallTit" style="display: inline-block;font-weight: 200;margin-left:20px;"><span><i class="fa fa-phone" style="margin-top: 10px;margin-right:5px;"></i>{{tel}}</span></div>
       </b-col>
-      <b-col cols="8" class="TextRight RightMobile" @click="toggleRightBlock">
+      <!-- <b-col cols="8" class="TextRight RightMobile" @click="toggleRightBlock">
         <i v-if="!HeaderMenu && !ifShowRightBlock" class="fa fa-ellipsis-v CursorPointer" style="margin-top: 10px;margin-right:5px;font-size: 30px;"></i>
         <i v-if="!HeaderMenu && ifShowRightBlock" class="fa fa-close CursorPointer" style="margin-top: 10px;margin-right:5px;font-size: 30px;"></i>
-      </b-col>
+      </b-col> -->
     </b-row>
     <!-- mobile -->
     <div v-if="HeaderMenu" class="headerMenu" style="background: #333 !important;overflow-y:scroll;">
@@ -54,7 +54,7 @@
         </div>
       </b-nav>
     </div>
-    <div v-if="ifShowRightBlock" class="headerMenu" style="background: #333 !important;">
+    <!-- <div v-if="ifShowRightBlock" class="headerMenu" style="background: #333 !important;">
       <b-nav vertical class="w-100">
           <b-nav-item style="height:50px;line-height:50px;" v-for="(web, idx) in zwzLinklist" :key="idx">
             <b-row @click="changeweb(web)">
@@ -73,7 +73,7 @@
             </b-row>
           </b-nav-item>
       </b-nav>
-    </div>
+    </div> -->
   </div>
 </template>
 

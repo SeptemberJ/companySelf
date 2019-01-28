@@ -3,7 +3,7 @@
   <div class="siderBar">
     <b-list-group>
       <b-list-group-item @click="changeMenu(-1)">
-        <img class="CursorPointer" style="width: 100px; height: 47px;" src="../../static/img/ZNKZLogo.png">
+        <img class="CursorPointer" style="width: 100px; height: 47px;" src="../../static/img/Logo.png">
       </b-list-group-item>
       <b-list-group-item class="CursorPointer" v-for="(menu, idx) in menuList" :key="idx" @click="changeMenu(idx)">
         <img :src='menu.icon'>
